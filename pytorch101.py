@@ -60,8 +60,8 @@ def mutate_tensor(x, indices, values):
   #                    TODO: Implement this function                          #
   #############################################################################
   # Replace "pass" statement with your code
-  for i in enumerate(indices):
-    x[i[1][0]][i[1][1]]=values[i]
+  for index, value in zip(indices, values):
+        x[index] = value
   #############################################################################
   #                            END OF YOUR CODE                               #
   #############################################################################
