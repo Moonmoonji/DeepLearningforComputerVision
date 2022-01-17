@@ -280,7 +280,7 @@ def reverse_rows(x):
   #                    TODO: Implement this function                          #
   #############################################################################
   # Replace "pass" statement with your code
-  y = x[range(x.shape[0]-1,-1,-1)]
+  y = x[range(x.shape[0]-1,-1,-1)] #M-1부터 0까지 1씩 빼줌 
   #############################################################################
   #                            END OF YOUR CODE                               #
   #############################################################################
@@ -360,8 +360,8 @@ def make_one_hot(x):
   #                    TODO: Implement this function                          #
   #############################################################################
   # Replace "pass" statement with your code
-  y = torch.zeros((len(x),max(x)+1 , dtype = torch.float32) 
-  y[range(len(x)),x]=1 
+  y = torch.zeros((len(x),max(x)+1) , dtype = torch.float32) 
+  y[range(len(x)),x]=1 # y[0:n-1,x0:xn-1]=1
   #############################################################################
   #                            END OF YOUR CODE                               #
   #############################################################################
@@ -394,7 +394,7 @@ def reshape_practice(x):
   #                    TODO: Implement this function                          #
   #############################################################################
   # Replace "pass" statement with your code
-  y = x.reshape(2,3,4).permute(1,0,2).reshape(3,8) 
+  y = x.reshape(2,3,4).permute(1,0,2).reshape(3,8) #permute : 차원 교환 
   #############################################################################
   #                            END OF YOUR CODE                               #
   #############################################################################
@@ -492,7 +492,7 @@ def batched_matrix_multiply(x, y, use_loop=True):
   B,M,P = y.shape 
 
   if use_loop :
-    z = torch.stack([x[i].mm(y[i]) for i in range(B)]) 
+    z = torch.stack([x[i].mm(y[i]) for i in range(B)]) #stack 합치기
     return z
 
   else : #loop 사용하지 않아도 될 때는 bmm함수로 그냥 구함 
