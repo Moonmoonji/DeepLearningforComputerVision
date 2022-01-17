@@ -106,6 +106,9 @@ def compute_distances_one_loop(x_train, x_test):
   # Replace "pass" statement with your code
   for i in range(num_train):
     dists[i] = ((x_train[i]-x_test)**2).sum(dim=(1,2,3))**(1/2) 
+    
+  #[1,2,3]-[[1,2,3],[4,5,6]]=[[0,0,0],[-3,-3,-3]] 
+  #dim=(1,2,3) : 3차원먼저 계산 -> 2차원 row계산 -> 2차원 column끼리 계산 
   ##############################################################################
   #                             END OF YOUR CODE                               #
   ##############################################################################
